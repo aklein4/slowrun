@@ -21,3 +21,13 @@ Explicit follow-up, 2026-09-26: remove dropout from this implementation.
 
 Explicit follow-up, 2026-09-26: keep the implementation in a single hackable file,
 like the other submissions, as part of minimizing the diff.
+
+Explicit follow-up, 2026-09-26: simplify the submission generally; avoid excessive
+robustness and edge-case handling. Preserve the baseline top-level script and
+make only the changes needed for this experiment.
+
+Explicit follow-up, 2026-09-26: match the normalization/scale strategy, embeddings,
+weight decay and gradient clipping to the normalized parameter paper
+(arXiv:2606.25971), while retaining the simple single-file implementation.
+
+Explicit follow-up, 2026-09-26: adjust hyperparameters based on the paper’s findings.

@@ -1,0 +1,22 @@
+{
+  "matrix_lr": 0.016,
+  "weight_decay": 0.0,
+  "num_epochs": 5,
+  "val_loss": 10.36452579498291,
+  "ensemble_val_loss": 9.822067760920618,
+  "snapshot_steps": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "noise_std": 0.0015407021574586365,
+  "best_val_loss": 9.65282917022705,
+  "wandb_url": null
+}

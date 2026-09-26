@@ -1,0 +1,20 @@
+{
+  "base_commit": "e173a3b0e995766779f51762d2e77b77c2aa346c",
+  "working_tree": "modified",
+  "sha256": {
+    "research/loss_budget/train.py": "b09f2070790229fb9e3acd9cb669880817ec5454d087826aa64103ad03d33f35",
+    "local_data/minimal-diff-check/train.pt": "bee915c9a45c4bc357686eb69bc18e56d3594900f28ed5f2f87abd8982ae7c77",
+    "local_data/minimal-diff-check/val.pt": "26bd2e04232ac7d7b1402537b90f17df262673a44aece1c03f22fbcf7cfd6b5e"
+  },
+  "final_code_check": {
+    "matrix_lr": 0.016,
+    "weight_decay": 0.0,
+    "num_epochs": 1,
+    "val_loss": 10.100517272949219,
+    "ensemble_val_loss": null,
+    "snapshot_steps": [],
+    "noise_std": 0.00010612080000000001,
+    "best_val_loss": 10.100517272949219,
+    "wandb_url": null
+  }
+}

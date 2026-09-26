@@ -1,0 +1,9 @@
+{
+  "base_commit": "e173a3b0e995766779f51762d2e77b77c2aa346c",
+  "working_tree": "modified",
+  "sha256": {
+    "research/loss_budget/train.py": "891acf888c61af486144ef77824ea0aff39470caa740e26b2452cd60ec8a1867",
+    "local_data/minimal-diff-check/train.pt": "bee915c9a45c4bc357686eb69bc18e56d3594900f28ed5f2f87abd8982ae7c77",
+    "local_data/minimal-diff-check/val.pt": "26bd2e04232ac7d7b1402537b90f17df262673a44aece1c03f22fbcf7cfd6b5e"
+  }
+}
