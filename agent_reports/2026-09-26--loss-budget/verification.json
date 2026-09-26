@@ -1,0 +1,38 @@
+{
+  "cpu_tests": {
+    "command": "python -m pytest -q tests/test_loss_budget.py",
+    "passed": 9
+  },
+  "docs": {
+    "checked_files": 17,
+    "errors": 0
+  },
+  "git_diff_check": "passed",
+  "standalone_ensemble_matches_training": true,
+  "standalone_ensemble": {
+    "loss": 8.17720967576258,
+    "tokens": 4096,
+    "members": 10,
+    "member_losses": [
+      8.165006718452787,
+      8.276436544954777,
+      8.21573485614499,
+      8.306380368248938,
+      8.294898513317094,
+      8.407136895175427,
+      8.474780953146364,
+      8.588761675650858,
+      8.714605377859698,
+      8.640197221680864
+    ]
+  },
+  "submission_sha256": "9f5e501bdff753309f9aad216f47b321f68c42288c632ec4f058424dc1c653a1",
+  "baseline_sha256": "ed92a47e4cbf44b831cf9b5669f0e6e19a4f099802882a47c993db2ee4c95a35",
+  "compile_check": {
+    "status": "failed before first update",
+    "torch": "2.7.0",
+    "triton": "3.7.0",
+    "reason": "Inductor cannot import triton_key; eager full-model checks passed"
+  },
+  "gpu_processes_remaining": false
+}

@@ -1,4 +1,11 @@
 # NanoGPT Slowrun
+
+This fork adds [loss-budget Gaussian-noise training](research/loss_budget/README.md)
+from the limited-compute “Add gating per attention head” record: normalized
+matrix directions, learned gains, Muon/AdamW and ten-checkpoint prediction
+ensembles. See the [agent workflow](AGENTS.md) for development protocols.
+The starting baseline and current one-hour record are pinned in [baselines/](baselines/README.md).
+
 ![Experiments](val_loss_animation.gif)
 
 NanoGPT Slowrun is a new benchmark for language modeling algorithms in the infinite compute, fixed data regime: 100M tokens from FineWeb, no compute/time limit, lowest validation loss wins.[^1] We call it a Slowrun since the goal is to spend as much time with the data as we need to maximize learning on it. We deliberately choose this setting in contrast to speedruns like modded-nanogpt, which assume infinite data and optimize for wall-clock time on fixed hardware. Loved by [@karpathy](https://x.com/karpathy/status/2027099040073286087) himself! 

@@ -5,3 +5,7 @@ logit_avg_ckpts/
 tiny_ckpts/
 runs/
 __pycache__/
+agent_logs/
+local_data/
+.pytest_cache/
+.venv/

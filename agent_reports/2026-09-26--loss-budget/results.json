@@ -1,0 +1,1275 @@
+{
+  "loss-budget-control-v2": {
+    "stage": "superseded development prototype",
+    "run": {
+      "args": {
+        "train_data": "local_data/loss-budget-data/train.pt",
+        "val_data": "local_data/loss-budget-data/val.pt",
+        "output": "local_data/loss-budget-control-v2",
+        "num_epochs": 40,
+        "steps": 12,
+        "stop_after": null,
+        "device_batch_size": 1,
+        "total_batch_size": 2048,
+        "sequence_len": 2048,
+        "n_layer": 30,
+        "n_head": 14,
+        "n_embd": 1792,
+        "dropout": 0.1,
+        "matrix_lr": 0.02,
+        "scale_lr": 0.001,
+        "embedding_lr": 0.001,
+        "scale_weight_decay": 0.0,
+        "lr_warmup_steps": 2,
+        "final_lr_fraction": 1.0,
+        "loss_target": 3.5,
+        "loss_ema_beta": 0.98,
+        "noise_seed_std": 0.0001,
+        "noise_max_std": 0.03,
+        "noise_growth": 1.02,
+        "noise_interval": 10,
+        "noise_warmup_steps": 100,
+        "loss_tolerance": 0.01,
+        "no_noise": true,
+        "snapshots": 0,
+        "eval_batches": 2,
+        "eval_every": 0,
+        "save_every": 0,
+        "skip_ensemble": false,
+        "resume": null,
+        "eval_only": false,
+        "compile": false,
+        "device": "cuda",
+        "seed": 42
+      },
+      "environment": {
+        "python": "3.10.12",
+        "torch": "2.7.0",
+        "cuda": "12.8",
+        "gpu": "NVIDIA GH200 480GB",
+        "git_commit": "c6f0fa1b415994e0c5cf163990fe253fe1622883",
+        "git_dirty": true,
+        "parameters": 1399476473
+      },
+      "contract": {
+        "model_config": {
+          "sequence_len": 2048,
+          "vocab_size": 50257,
+          "n_layer": 30,
+          "n_head": 14,
+          "n_kv_head": 14,
+          "n_embd": 1792,
+          "window_pattern": "SSSL",
+          "dropout": 0.1
+        },
+        "total_steps": 12,
+        "micro_limit": 12,
+        "accumulation": 1,
+        "batch_size": 1,
+        "train_sha256": "76ac2651cbc5506c2c29103acc8acd06d728e2b506bfd70adfe0a4f5339cac9c",
+        "val_sha256": "bfc69f86f04a27e975ca1c5d715f74353561c1c8ca2f7f92d8b53846e6024d1c",
+        "seed": 42,
+        "controller_config": {
+          "target": 3.5,
+          "beta": 0.98,
+          "seed_std": 0.0001,
+          "max_std": 0.03,
+          "growth": 1.02,
+          "interval": 10,
+          "warmup": 100,
+          "tolerance": 0.01,
+          "enabled": false,
+          "ema_sum": 0.0,
+          "steps": 0,
+          "noise_std": 0.0
+        },
+        "snapshot_steps": [],
+        "optimizer": {
+          "matrix_lr": 0.02,
+          "scale_lr": 0.001,
+          "embedding_lr": 0.001,
+          "scale_weight_decay": 0.0,
+          "lr_warmup_steps": 2,
+          "final_lr_fraction": 1.0
+        }
+      },
+      "data": {
+        "train": {
+          "path": "/home/ubuntu/slowrun/local_data/loss-budget-data/train.pt",
+          "sha256": "76ac2651cbc5506c2c29103acc8acd06d728e2b506bfd70adfe0a4f5339cac9c",
+          "rows": 256,
+          "dropped_rows": 0
+        },
+        "val": {
+          "path": "/home/ubuntu/slowrun/local_data/loss-budget-data/val.pt",
+          "sha256": "bfc69f86f04a27e975ca1c5d715f74353561c1c8ca2f7f92d8b53846e6024d1c",
+          "rows": 8,
+          "dropped_rows": 0
+        }
+      }
+    },
+    "result": {
+      "step": 12,
+      "planned_steps": 12,
+      "completed": true,
+      "initial_validation": {
+        "loss": 10.826279798755422,
+        "tokens": 4096,
+        "members": 1,
+        "member_losses": [
+          10.826279798755422
+        ]
+      },
+      "final_validation": {
+        "loss": 10.690914638573304,
+        "tokens": 4096,
+        "members": 1,
+        "member_losses": [
+          10.690914638573304
+        ]
+      },
+      "loss_ema": 10.776430364140364,
+      "noise_std": 0.0,
+      "sphere_error": {
+        "matrix": 1.1920928955078125e-07,
+        "embedding": 1.7881393432617188e-07
+      },
+      "snapshot_count": 0,
+      "session_seconds": 13.598123461008072,
+      "peak_memory_gib": 26.293360233306885
+    },
+    "first_noise_step": null,
+    "noise_decreases": 0,
+    "median_step_seconds_after_first_two": 0.4708454255014658,
+    "min_train_loss": 10.72038745880127,
+    "max_train_loss": 10.826557159423828
+  },
+  "loss-budget-gain003": {
+    "stage": "superseded development prototype",
+    "run": {
+      "args": {
+        "train_data": "local_data/loss-budget-data/train.pt",
+        "val_data": "local_data/loss-budget-data/val.pt",
+        "output": "local_data/loss-budget-gain003",
+        "num_epochs": 40,
+        "steps": 12,
+        "stop_after": null,
+        "device_batch_size": 1,
+        "total_batch_size": 2048,
+        "sequence_len": 2048,
+        "n_layer": 30,
+        "n_head": 14,
+        "n_embd": 1792,
+        "dropout": 0.1,
+        "matrix_lr": 0.02,
+        "scale_lr": 0.003,
+        "embedding_lr": 0.002,
+        "unembedding_lr": 0.02,
+        "scale_weight_decay": 0.0,
+        "lr_warmup_steps": 2,
+        "final_lr_fraction": 1.0,
+        "loss_target": 3.5,
+        "loss_ema_beta": 0.98,
+        "noise_seed_std": 0.0001,
+        "noise_max_std": 0.03,
+        "noise_growth": 1.02,
+        "noise_interval": 10,
+        "noise_warmup_steps": 100,
+        "loss_tolerance": 0.01,
+        "no_noise": true,
+        "snapshots": 0,
+        "eval_batches": 2,
+        "eval_every": 0,
+        "save_every": 0,
+        "skip_ensemble": false,
+        "resume": null,
+        "eval_only": false,
+        "compile": false,
+        "device": "cuda",
+        "seed": 42
+      },
+      "environment": {
+        "python": "3.10.12",
+        "torch": "2.7.0",
+        "cuda": "12.8",
+        "gpu": "NVIDIA GH200 480GB",
+        "git_commit": "c6f0fa1b415994e0c5cf163990fe253fe1622883",
+        "git_dirty": true,
+        "parameters": 1399476473
+      },
+      "contract": {
+        "model_config": {
+          "sequence_len": 2048,
+          "vocab_size": 50257,
+          "n_layer": 30,
+          "n_head": 14,
+          "n_kv_head": 14,
+          "n_embd": 1792,
+          "window_pattern": "SSSL",
+          "dropout": 0.1
+        },
+        "total_steps": 12,
+        "micro_limit": 12,
+        "accumulation": 1,
+        "batch_size": 1,
+        "train_sha256": "76ac2651cbc5506c2c29103acc8acd06d728e2b506bfd70adfe0a4f5339cac9c",
+        "val_sha256": "bfc69f86f04a27e975ca1c5d715f74353561c1c8ca2f7f92d8b53846e6024d1c",
+        "seed": 42,
+        "controller_config": {
+          "target": 3.5,
+          "beta": 0.98,
+          "seed_std": 0.0001,
+          "max_std": 0.03,
+          "growth": 1.02,
+          "interval": 10,
+          "warmup": 100,
+          "tolerance": 0.01,
+          "enabled": false,
+          "ema_sum": 0.0,
+          "steps": 0,
+          "noise_std": 0.0
+        },
+        "snapshot_steps": [],
+        "optimizer": {
+          "matrix_lr": 0.02,
+          "scale_lr": 0.003,
+          "embedding_lr": 0.002,
+          "unembedding_lr": 0.02,
+          "scale_weight_decay": 0.0,
+          "lr_warmup_steps": 2,
+          "final_lr_fraction": 1.0
+        }
+      },
+      "data": {
+        "train": {
+          "path": "/home/ubuntu/slowrun/local_data/loss-budget-data/train.pt",
+          "sha256": "76ac2651cbc5506c2c29103acc8acd06d728e2b506bfd70adfe0a4f5339cac9c",
+          "rows": 256,
+          "dropped_rows": 0
+        },
+        "val": {
+          "path": "/home/ubuntu/slowrun/local_data/loss-budget-data/val.pt",
+          "sha256": "bfc69f86f04a27e975ca1c5d715f74353561c1c8ca2f7f92d8b53846e6024d1c",
+          "rows": 8,
+          "dropped_rows": 0
+        }
+      }
+    },
+    "result": {
+      "step": 12,
+      "planned_steps": 12,
+      "completed": true,
+      "initial_validation": {
+        "loss": 10.826279798755422,
+        "tokens": 4096,
+        "members": 1,
+        "member_losses": [
+          10.826279798755422
+        ]
+      },
+      "final_validation": {
+        "loss": 9.266454776516184,
+        "tokens": 4096,
+        "members": 1,
+        "member_losses": [
+          9.266454776516184
+        ]
+      },
+      "loss_ema": 10.331448530412036,
+      "noise_std": 0.0,
+      "sphere_error": {
+        "matrix": 1.1920928955078125e-07,
+        "embedding": 1.1920928955078125e-07
+      },
+      "snapshot_count": 0,
+      "session_seconds": 13.819083150476217,
+      "peak_memory_gib": 26.293726444244385
+    },
+    "first_noise_step": null,
+    "noise_decreases": 0,
+    "median_step_seconds_after_first_two": 0.4795840233564377,
+    "min_train_loss": 9.748702049255371,
+    "max_train_loss": 10.826557159423828
+  },
+  "loss-budget-gain01": {
+    "stage": "superseded development prototype",
+    "run": {
+      "args": {
+        "train_data": "local_data/loss-budget-data/train.pt",
+        "val_data": "local_data/loss-budget-data/val.pt",
+        "output": "local_data/loss-budget-gain01",
+        "num_epochs": 40,
+        "steps": 12,
+        "stop_after": null,
+        "device_batch_size": 1,
+        "total_batch_size": 2048,
+        "sequence_len": 2048,
+        "n_layer": 30,
+        "n_head": 14,
+        "n_embd": 1792,
+        "dropout": 0.1,
+        "matrix_lr": 0.02,
+        "scale_lr": 0.01,
+        "embedding_lr": 0.002,
+        "unembedding_lr": 0.02,
+        "scale_weight_decay": 0.0,
+        "lr_warmup_steps": 2,
+        "final_lr_fraction": 1.0,
+        "loss_target": 3.5,
+        "loss_ema_beta": 0.98,
+        "noise_seed_std": 0.0001,
+        "noise_max_std": 0.03,
+        "noise_growth": 1.02,
+        "noise_interval": 10,
+        "noise_warmup_steps": 100,
+        "loss_tolerance": 0.01,
+        "no_noise": true,
+        "snapshots": 0,
+        "eval_batches": 2,
+        "eval_every": 0,
+        "save_every": 0,
+        "skip_ensemble": false,
+        "resume": null,
+        "eval_only": false,
+        "compile": false,
+        "device": "cuda",
+        "seed": 42
+      },
+      "environment": {
+        "python": "3.10.12",
+        "torch": "2.7.0",
+        "cuda": "12.8",
+        "gpu": "NVIDIA GH200 480GB",
+        "git_commit": "c6f0fa1b415994e0c5cf163990fe253fe1622883",
+        "git_dirty": true,
+        "parameters": 1399476473
+      },
+      "contract": {
+        "model_config": {
+          "sequence_len": 2048,
+          "vocab_size": 50257,
+          "n_layer": 30,
+          "n_head": 14,
+          "n_kv_head": 14,
+          "n_embd": 1792,
+          "window_pattern": "SSSL",
+          "dropout": 0.1
+        },
+        "total_steps": 12,
+        "micro_limit": 12,
+        "accumulation": 1,
+        "batch_size": 1,
+        "train_sha256": "76ac2651cbc5506c2c29103acc8acd06d728e2b506bfd70adfe0a4f5339cac9c",
+        "val_sha256": "bfc69f86f04a27e975ca1c5d715f74353561c1c8ca2f7f92d8b53846e6024d1c",
+        "seed": 42,
+        "controller_config": {
+          "target": 3.5,
+          "beta": 0.98,
+          "seed_std": 0.0001,
+          "max_std": 0.03,
+          "growth": 1.02,
+          "interval": 10,
+          "warmup": 100,
+          "tolerance": 0.01,
+          "enabled": false,
+          "ema_sum": 0.0,
+          "steps": 0,
+          "noise_std": 0.0
+        },
+        "snapshot_steps": [],
+        "optimizer": {
+          "matrix_lr": 0.02,
+          "scale_lr": 0.01,
+          "embedding_lr": 0.002,
+          "unembedding_lr": 0.02,
+          "scale_weight_decay": 0.0,
+          "lr_warmup_steps": 2,
+          "final_lr_fraction": 1.0
+        }
+      },
+      "data": {
+        "train": {
+          "path": "/home/ubuntu/slowrun/local_data/loss-budget-data/train.pt",
+          "sha256": "76ac2651cbc5506c2c29103acc8acd06d728e2b506bfd70adfe0a4f5339cac9c",
+          "rows": 256,
+          "dropped_rows": 0
+        },
+        "val": {
+          "path": "/home/ubuntu/slowrun/local_data/loss-budget-data/val.pt",
+          "sha256": "bfc69f86f04a27e975ca1c5d715f74353561c1c8ca2f7f92d8b53846e6024d1c",
+          "rows": 8,
+          "dropped_rows": 0
+        }
+      }
+    },
+    "result": {
+      "step": 12,
+      "planned_steps": 12,
+      "completed": true,
+      "initial_validation": {
+        "loss": 10.826279798755422,
+        "tokens": 4096,
+        "members": 1,
+        "member_losses": [
+          10.826279798755422
+        ]
+      },
+      "final_validation": {
+        "loss": 8.514325711817946,
+        "tokens": 4096,
+        "members": 1,
+        "member_losses": [
+          8.514325711817946
+        ]
+      },
+      "loss_ema": 9.78657643107125,
+      "noise_std": 0.0,
+      "sphere_error": {
+        "matrix": 1.1920928955078125e-07,
+        "embedding": 1.1920928955078125e-07
+      },
+      "snapshot_count": 0,
+      "session_seconds": 13.744538128376007,
+      "peak_memory_gib": 26.293726444244385
+    },
+    "first_noise_step": null,
+    "noise_decreases": 0,
+    "median_step_seconds_after_first_two": 0.4860564786940813,
+    "min_train_loss": 7.9659037590026855,
+    "max_train_loss": 10.826557159423828
+  },
+  "loss-budget-noise-ensemble": {
+    "stage": "superseded development prototype",
+    "run": {
+      "args": {
+        "train_data": "local_data/loss-budget-data-sync/train-eight-sequences.pt",
+        "val_data": "local_data/loss-budget-data-sync/val.pt",
+        "output": "local_data/loss-budget-noise-ensemble",
+        "num_epochs": 8,
+        "steps": null,
+        "stop_after": null,
+        "device_batch_size": 1,
+        "total_batch_size": 2048,
+        "sequence_len": 2048,
+        "n_layer": 30,
+        "n_head": 14,
+        "n_embd": 1792,
+        "dropout": 0.1,
+        "matrix_lr": 0.02,
+        "scale_lr": 0.01,
+        "embedding_lr": 0.002,
+        "unembedding_lr": 0.02,
+        "scale_weight_decay": 0.0,
+        "lr_warmup_steps": 2,
+        "final_lr_fraction": 1.0,
+        "loss_target": 9.0,
+        "loss_ema_beta": 0.9,
+        "noise_seed_std": 0.002,
+        "noise_max_std": 0.03,
+        "noise_growth": 1.2,
+        "noise_interval": 1,
+        "noise_warmup_steps": 4,
+        "loss_tolerance": 0.01,
+        "no_noise": false,
+        "snapshots": 10,
+        "eval_batches": 2,
+        "eval_every": 16,
+        "save_every": 0,
+        "skip_ensemble": false,
+        "resume": null,
+        "eval_only": false,
+        "compile": false,
+        "device": "cuda",
+        "seed": 42
+      },
+      "environment": {
+        "python": "3.10.12",
+        "torch": "2.7.0",
+        "cuda": "12.8",
+        "gpu": "NVIDIA GH200 480GB",
+        "git_commit": "c6f0fa1b415994e0c5cf163990fe253fe1622883",
+        "git_dirty": true,
+        "parameters": 1399476473
+      },
+      "contract": {
+        "model_config": {
+          "sequence_len": 2048,
+          "vocab_size": 50257,
+          "n_layer": 30,
+          "n_head": 14,
+          "n_kv_head": 14,
+          "n_embd": 1792,
+          "window_pattern": "SSSL",
+          "dropout": 0.1
+        },
+        "total_steps": 64,
+        "micro_limit": 64,
+        "accumulation": 1,
+        "batch_size": 1,
+        "train_sha256": "0917daa9b287d24ee9e741550b923982d5955931a2622b07b937d23f70432a59",
+        "val_sha256": "bfc69f86f04a27e975ca1c5d715f74353561c1c8ca2f7f92d8b53846e6024d1c",
+        "seed": 42,
+        "controller_config": {
+          "target": 9.0,
+          "beta": 0.9,
+          "seed_std": 0.002,
+          "max_std": 0.03,
+          "growth": 1.2,
+          "interval": 1,
+          "warmup": 4,
+          "tolerance": 0.01,
+          "enabled": true,
+          "ema_sum": 0.0,
+          "steps": 0,
+          "noise_std": 0.0
+        },
+        "snapshot_steps": [
+          32,
+          36,
+          39,
+          43,
+          46,
+          50,
+          53,
+          57,
+          60,
+          64
+        ],
+        "optimizer": {
+          "matrix_lr": 0.02,
+          "scale_lr": 0.01,
+          "embedding_lr": 0.002,
+          "unembedding_lr": 0.02,
+          "scale_weight_decay": 0.0,
+          "lr_warmup_steps": 2,
+          "final_lr_fraction": 1.0
+        }
+      },
+      "data": {
+        "train": {
+          "path": "/home/ubuntu/slowrun/local_data/loss-budget-data-sync/train-eight-sequences.pt",
+          "sha256": "0917daa9b287d24ee9e741550b923982d5955931a2622b07b937d23f70432a59",
+          "rows": 8,
+          "dropped_rows": 0
+        },
+        "val": {
+          "path": "/home/ubuntu/slowrun/local_data/loss-budget-data-sync/val.pt",
+          "sha256": "bfc69f86f04a27e975ca1c5d715f74353561c1c8ca2f7f92d8b53846e6024d1c",
+          "rows": 8,
+          "dropped_rows": 0
+        }
+      }
+    },
+    "result": {
+      "step": 64,
+      "planned_steps": 64,
+      "completed": true,
+      "initial_validation": {
+        "loss": 10.826279798755422,
+        "tokens": 4096,
+        "members": 1,
+        "member_losses": [
+          10.826279798755422
+        ]
+      },
+      "final_validation": {
+        "loss": 9.31200790837488,
+        "tokens": 4096,
+        "members": 1,
+        "member_losses": [
+          9.31200790837488
+        ]
+      },
+      "loss_ema": 3.340368394274146,
+      "noise_std": 0.03,
+      "sphere_error": {
+        "matrix": 1.1920928955078125e-07,
+        "embedding": 1.7881393432617188e-07
+      },
+      "snapshot_count": 10,
+      "session_seconds": 68.99141515046358,
+      "peak_memory_gib": 26.293726444244385,
+      "ensemble": {
+        "loss": 8.537427521902355,
+        "tokens": 4096,
+        "members": 10,
+        "member_losses": [
+          8.341032489948702,
+          8.582763035446987,
+          8.48228239189757,
+          8.693111503824184,
+          8.678525835043729,
+          8.933533054508189,
+          8.986935310005947,
+          9.038288585671125,
+          9.111135450804795,
+          9.31200790837488
+        ]
+      }
+    },
+    "first_noise_step": 12,
+    "noise_decreases": 0,
+    "median_step_seconds_after_first_two": 0.5280979909002781,
+    "min_train_loss": 2.3098013401031494,
+    "max_train_loss": 10.825477600097656
+  },
+  "loss-budget-feedback": {
+    "stage": "superseded development prototype",
+    "run": {
+      "args": {
+        "train_data": "local_data/loss-budget-data-sync/train-eight-sequences.pt",
+        "val_data": "local_data/loss-budget-data-sync/val.pt",
+        "output": "local_data/loss-budget-feedback",
+        "num_epochs": 16,
+        "steps": null,
+        "stop_after": null,
+        "device_batch_size": 1,
+        "total_batch_size": 2048,
+        "sequence_len": 2048,
+        "n_layer": 30,
+        "n_head": 14,
+        "n_embd": 1792,
+        "dropout": 0.1,
+        "matrix_lr": 0.02,
+        "scale_lr": 0.01,
+        "embedding_lr": 0.002,
+        "unembedding_lr": 0.02,
+        "scale_weight_decay": 0.0,
+        "lr_warmup_steps": 2,
+        "final_lr_fraction": 1.0,
+        "loss_target": 5.0,
+        "loss_ema_beta": 0.9,
+        "noise_seed_std": 0.01,
+        "noise_max_std": 0.5,
+        "noise_growth": 1.2,
+        "noise_interval": 1,
+        "noise_warmup_steps": 4,
+        "loss_tolerance": 0.01,
+        "no_noise": false,
+        "snapshots": 0,
+        "eval_batches": 2,
+        "eval_every": 32,
+        "save_every": 0,
+        "skip_ensemble": false,
+        "resume": null,
+        "eval_only": false,
+        "compile": false,
+        "device": "cuda",
+        "seed": 42
+      },
+      "environment": {
+        "python": "3.10.12",
+        "torch": "2.7.0",
+        "cuda": "12.8",
+        "gpu": "NVIDIA GH200 480GB",
+        "git_commit": "c6f0fa1b415994e0c5cf163990fe253fe1622883",
+        "git_dirty": true,
+        "parameters": 1399476473
+      },
+      "contract": {
+        "model_config": {
+          "sequence_len": 2048,
+          "vocab_size": 50257,
+          "n_layer": 30,
+          "n_head": 14,
+          "n_kv_head": 14,
+          "n_embd": 1792,
+          "window_pattern": "SSSL",
+          "dropout": 0.1
+        },
+        "total_steps": 128,
+        "micro_limit": 128,
+        "accumulation": 1,
+        "batch_size": 1,
+        "train_sha256": "0917daa9b287d24ee9e741550b923982d5955931a2622b07b937d23f70432a59",
+        "val_sha256": "bfc69f86f04a27e975ca1c5d715f74353561c1c8ca2f7f92d8b53846e6024d1c",
+        "seed": 42,
+        "controller_config": {
+          "target": 5.0,
+          "beta": 0.9,
+          "seed_std": 0.01,
+          "max_std": 0.5,
+          "growth": 1.2,
+          "interval": 1,
+          "warmup": 4,
+          "tolerance": 0.01,
+          "enabled": true,
+          "ema_sum": 0.0,
+          "steps": 0,
+          "noise_std": 0.0
+        },
+        "snapshot_steps": [],
+        "optimizer": {
+          "matrix_lr": 0.02,
+          "scale_lr": 0.01,
+          "embedding_lr": 0.002,
+          "unembedding_lr": 0.02,
+          "scale_weight_decay": 0.0,
+          "lr_warmup_steps": 2,
+          "final_lr_fraction": 1.0
+        }
+      },
+      "data": {
+        "train": {
+          "path": "/home/ubuntu/slowrun/local_data/loss-budget-data-sync/train-eight-sequences.pt",
+          "sha256": "0917daa9b287d24ee9e741550b923982d5955931a2622b07b937d23f70432a59",
+          "rows": 8,
+          "dropped_rows": 0
+        },
+        "val": {
+          "path": "/home/ubuntu/slowrun/local_data/loss-budget-data-sync/val.pt",
+          "sha256": "bfc69f86f04a27e975ca1c5d715f74353561c1c8ca2f7f92d8b53846e6024d1c",
+          "rows": 8,
+          "dropped_rows": 0
+        }
+      }
+    },
+    "result": {
+      "step": 128,
+      "planned_steps": 128,
+      "completed": true,
+      "initial_validation": {
+        "loss": 10.826279798755422,
+        "tokens": 4096,
+        "members": 1,
+        "member_losses": [
+          10.826279798755422
+        ]
+      },
+      "final_validation": {
+        "loss": 9.915789112301127,
+        "tokens": 4096,
+        "members": 1,
+        "member_losses": [
+          9.915789112301127
+        ]
+      },
+      "loss_ema": 3.2725515809820127,
+      "noise_std": 0.5,
+      "sphere_error": {
+        "matrix": 1.1920928955078125e-07,
+        "embedding": 1.1920928955078125e-07
+      },
+      "snapshot_count": 0,
+      "session_seconds": 69.7167658507824,
+      "peak_memory_gib": 26.293726444244385
+    },
+    "first_noise_step": 35,
+    "noise_decreases": 0,
+    "median_step_seconds_after_first_two": 0.4875014889985323,
+    "min_train_loss": 2.265069007873535,
+    "max_train_loss": 10.825477600097656
+  },
+  "loss-budget-final": {
+    "stage": "superseded development prototype",
+    "run": {
+      "args": {
+        "train_data": "local_data/loss-budget-data-sync/train-eight-sequences.pt",
+        "val_data": "local_data/loss-budget-data-sync/val.pt",
+        "output": "local_data/loss-budget-final",
+        "num_epochs": 8,
+        "steps": null,
+        "stop_after": null,
+        "device_batch_size": 1,
+        "total_batch_size": 2048,
+        "sequence_len": 2048,
+        "n_layer": 30,
+        "n_head": 14,
+        "n_embd": 1792,
+        "dropout": 0.1,
+        "matrix_lr": 0.02,
+        "scale_lr": 0.01,
+        "embedding_lr": 0.002,
+        "unembedding_lr": 0.02,
+        "scale_weight_decay": 0.0,
+        "lr_warmup_steps": 2,
+        "final_lr_fraction": 1.0,
+        "loss_target": 5.0,
+        "loss_ema_beta": 0.9,
+        "noise_seed_std": 0.01,
+        "noise_max_std": 0.5,
+        "noise_growth": 1.2,
+        "noise_interval": 1,
+        "noise_warmup_steps": 4,
+        "loss_tolerance": 0.01,
+        "no_noise": false,
+        "snapshots": 10,
+        "eval_batches": 2,
+        "eval_every": 16,
+        "save_every": 0,
+        "skip_ensemble": false,
+        "resume": null,
+        "eval_only": false,
+        "compile": false,
+        "device": "cuda",
+        "seed": 42
+      },
+      "environment": {
+        "python": "3.10.12",
+        "torch": "2.7.0",
+        "cuda": "12.8",
+        "gpu": "NVIDIA GH200 480GB",
+        "git_commit": "c6f0fa1b415994e0c5cf163990fe253fe1622883",
+        "git_dirty": true,
+        "parameters": 1399476473
+      },
+      "contract": {
+        "model_config": {
+          "sequence_len": 2048,
+          "vocab_size": 50257,
+          "n_layer": 30,
+          "n_head": 14,
+          "n_kv_head": 14,
+          "n_embd": 1792,
+          "window_pattern": "SSSL",
+          "dropout": 0.1
+        },
+        "total_steps": 64,
+        "micro_limit": 64,
+        "accumulation": 1,
+        "batch_size": 1,
+        "train_sha256": "0917daa9b287d24ee9e741550b923982d5955931a2622b07b937d23f70432a59",
+        "val_sha256": "bfc69f86f04a27e975ca1c5d715f74353561c1c8ca2f7f92d8b53846e6024d1c",
+        "seed": 42,
+        "controller_config": {
+          "target": 5.0,
+          "beta": 0.9,
+          "seed_std": 0.01,
+          "max_std": 0.5,
+          "growth": 1.2,
+          "interval": 1,
+          "warmup": 4,
+          "tolerance": 0.01,
+          "enabled": true,
+          "ema_sum": 0.0,
+          "steps": 0,
+          "noise_std": 0.0
+        },
+        "snapshot_steps": [
+          32,
+          36,
+          39,
+          43,
+          46,
+          50,
+          53,
+          57,
+          60,
+          64
+        ],
+        "optimizer": {
+          "matrix_lr": 0.02,
+          "scale_lr": 0.01,
+          "embedding_lr": 0.002,
+          "unembedding_lr": 0.02,
+          "scale_weight_decay": 0.0,
+          "lr_warmup_steps": 2,
+          "final_lr_fraction": 1.0
+        }
+      },
+      "data": {
+        "train": {
+          "path": "/home/ubuntu/slowrun/local_data/loss-budget-data-sync/train-eight-sequences.pt",
+          "sha256": "0917daa9b287d24ee9e741550b923982d5955931a2622b07b937d23f70432a59",
+          "rows": 8,
+          "dropped_rows": 0
+        },
+        "val": {
+          "path": "/home/ubuntu/slowrun/local_data/loss-budget-data-sync/val.pt",
+          "sha256": "bfc69f86f04a27e975ca1c5d715f74353561c1c8ca2f7f92d8b53846e6024d1c",
+          "rows": 8,
+          "dropped_rows": 0
+        }
+      }
+    },
+    "result": {
+      "step": 64,
+      "planned_steps": 64,
+      "completed": true,
+      "initial_validation": {
+        "loss": 10.826016237027943,
+        "tokens": 4096,
+        "members": 1,
+        "member_losses": [
+          10.826016237027943
+        ]
+      },
+      "final_validation": {
+        "loss": 9.139768878470932,
+        "tokens": 4096,
+        "members": 1,
+        "member_losses": [
+          9.139768878470932
+        ]
+      },
+      "loss_ema": 3.747506164098356,
+      "noise_std": 0.5,
+      "sphere_error": {
+        "matrix": 1.1920928955078125e-07,
+        "embedding": 1.1920928955078125e-07
+      },
+      "snapshot_count": 10,
+      "session_seconds": 72.83017874136567,
+      "peak_memory_gib": 26.338953495025635,
+      "ensemble": {
+        "loss": 8.518526242755591,
+        "tokens": 4096,
+        "members": 10,
+        "member_losses": [
+          8.31309132667775,
+          8.582531252430272,
+          8.520439515874386,
+          8.762910974129227,
+          8.708003129768713,
+          8.861610265194486,
+          8.932461434102152,
+          9.153812924751037,
+          9.195630668074955,
+          9.139768878470932
+        ]
+      }
+    },
+    "first_noise_step": 35,
+    "noise_decreases": 0,
+    "median_step_seconds_after_first_two": 0.5778649654239416,
+    "min_train_loss": 2.56022310256958,
+    "max_train_loss": 10.82644271850586
+  },
+  "loss-budget-no-dropout": {
+    "stage": "final",
+    "run": {
+      "args": {
+        "train_data": "local_data/loss-budget-data-sync/train-eight-sequences.pt",
+        "val_data": "local_data/loss-budget-data-sync/val.pt",
+        "output": "local_data/loss-budget-no-dropout",
+        "num_epochs": 8,
+        "steps": null,
+        "stop_after": null,
+        "device_batch_size": 1,
+        "total_batch_size": 2048,
+        "sequence_len": 2048,
+        "n_layer": 30,
+        "n_head": 14,
+        "n_embd": 1792,
+        "matrix_lr": 0.02,
+        "scale_lr": 0.01,
+        "scalar_lr": 0.125,
+        "embedding_lr": 0.002,
+        "unembedding_lr": 0.02,
+        "scale_weight_decay": 0.0,
+        "lr_warmup_steps": 2,
+        "final_lr_fraction": 1.0,
+        "loss_target": 5.0,
+        "loss_ema_beta": 0.9,
+        "noise_seed_std": 0.01,
+        "noise_max_std": 0.5,
+        "noise_growth": 1.2,
+        "noise_interval": 1,
+        "noise_warmup_steps": 4,
+        "loss_tolerance": 0.01,
+        "no_noise": false,
+        "snapshots": 10,
+        "eval_batches": 2,
+        "eval_every": 16,
+        "save_every": 0,
+        "skip_ensemble": false,
+        "resume": null,
+        "eval_only": false,
+        "compile": false,
+        "device": "cuda",
+        "seed": 42
+      },
+      "environment": {
+        "python": "3.10.12",
+        "torch": "2.7.0",
+        "cuda": "12.8",
+        "gpu": "NVIDIA GH200 480GB",
+        "git_commit": "c6f0fa1b415994e0c5cf163990fe253fe1622883",
+        "git_dirty": true,
+        "parameters": 1399476473,
+        "source_sha256": {
+          "ensemble.py": "bc8d8e3261e6fbaa801442e5bcf8bd563e1e59c259d5e3c71a21a62f9b341ccc",
+          "data.py": "b4a33a628a4410030edd7cbc7b1ba611829d6ae4924009a9f10c20dbb39a877e",
+          "optimizer.py": "b3fef796db801c85776fed4b4aa49071f5cb297e4f963dd63cdd23a6c6a99954",
+          "muon_kernel.py": "1856d0074d72890bbfdbee11f6b002f3db7b65fd7d3ae788ba8200f6770bbe78",
+          "compare_baseline.py": "35f319b9d4cbb7e12e80cf35dc07a9dee317a779470bd1289c5e991fd986541d",
+          "train.py": "7ac284889d07c1925aa124cd0de5f2af9a38e2ff415eb2ac021041310fab2004",
+          "model.py": "40179196a90f9102000bd4b61e758725d6e5d6e796e2f26b15f1e25eed5376cb",
+          "__init__.py": "c9926c1c5fca34179cf6b86f1de1a1f6abba728042498796ef246e45b967c9b7",
+          "prepare_smoke.py": "efb4a2da59f38bc90a094cdd5fe7775b682ee078229d46d1555d44a8c36f2731",
+          "parameterization.py": "28146ae160e48089a3a14bac0833dc71fa651c39d7bf680ac530628891218e45"
+        }
+      },
+      "contract": {
+        "model_config": {
+          "sequence_len": 2048,
+          "vocab_size": 50257,
+          "n_layer": 30,
+          "n_head": 14,
+          "n_kv_head": 14,
+          "n_embd": 1792,
+          "window_pattern": "SSSL"
+        },
+        "total_steps": 64,
+        "micro_limit": 64,
+        "accumulation": 1,
+        "batch_size": 1,
+        "train_sha256": "0917daa9b287d24ee9e741550b923982d5955931a2622b07b937d23f70432a59",
+        "val_sha256": "bfc69f86f04a27e975ca1c5d715f74353561c1c8ca2f7f92d8b53846e6024d1c",
+        "seed": 42,
+        "controller_config": {
+          "target": 5.0,
+          "beta": 0.9,
+          "seed_std": 0.01,
+          "max_std": 0.5,
+          "growth": 1.2,
+          "interval": 1,
+          "warmup": 4,
+          "tolerance": 0.01,
+          "enabled": true,
+          "ema_sum": 0.0,
+          "steps": 0,
+          "noise_std": 0.0
+        },
+        "snapshot_steps": [
+          32,
+          36,
+          39,
+          43,
+          46,
+          50,
+          53,
+          57,
+          60,
+          64
+        ],
+        "optimizer": {
+          "matrix_lr": 0.02,
+          "scale_lr": 0.01,
+          "scalar_lr": 0.125,
+          "embedding_lr": 0.002,
+          "unembedding_lr": 0.02,
+          "scale_weight_decay": 0.0,
+          "lr_warmup_steps": 2,
+          "final_lr_fraction": 1.0
+        }
+      },
+      "data": {
+        "train": {
+          "path": "/home/ubuntu/slowrun/local_data/loss-budget-data-sync/train-eight-sequences.pt",
+          "sha256": "0917daa9b287d24ee9e741550b923982d5955931a2622b07b937d23f70432a59",
+          "rows": 8,
+          "dropped_rows": 0
+        },
+        "val": {
+          "path": "/home/ubuntu/slowrun/local_data/loss-budget-data-sync/val.pt",
+          "sha256": "bfc69f86f04a27e975ca1c5d715f74353561c1c8ca2f7f92d8b53846e6024d1c",
+          "rows": 8,
+          "dropped_rows": 0
+        }
+      }
+    },
+    "result": {
+      "step": 64,
+      "planned_steps": 64,
+      "completed": true,
+      "initial_validation": {
+        "loss": 10.826016237027943,
+        "tokens": 4096,
+        "members": 1,
+        "member_losses": [
+          10.826016237027943
+        ]
+      },
+      "final_validation": {
+        "loss": 8.640197221680864,
+        "tokens": 4096,
+        "members": 1,
+        "member_losses": [
+          8.640197221680864
+        ]
+      },
+      "loss_ema": 4.427053400576472,
+      "noise_std": 0.05159780351999999,
+      "sphere_error": {
+        "matrix": 1.1920928955078125e-07,
+        "embedding": 1.7881393432617188e-07
+      },
+      "snapshot_count": 10,
+      "session_seconds": 74.66497590765357,
+      "peak_memory_gib": 26.135950565338135,
+      "ensemble": {
+        "loss": 8.17720967576258,
+        "tokens": 4096,
+        "members": 10,
+        "member_losses": [
+          8.165006718452787,
+          8.276436544954777,
+          8.21573485614499,
+          8.306380368248938,
+          8.294898513317094,
+          8.407136895175427,
+          8.474780953146364,
+          8.588761675650858,
+          8.714605377859698,
+          8.640197221680864
+        ]
+      }
+    },
+    "first_noise_step": 55,
+    "noise_decreases": 0,
+    "median_step_seconds_after_first_two": 0.601982805877924,
+    "min_train_loss": 3.0465800762176514,
+    "max_train_loss": 11.1881103515625
+  },
+  "loss-budget-single-file": {
+    "stage": "final",
+    "run": {
+      "args": {
+        "train_data": "local_data/loss-budget-data-sync/train-eight-sequences.pt",
+        "val_data": "local_data/loss-budget-data-sync/val.pt",
+        "output": "local_data/loss-budget-single-file",
+        "num_epochs": 40,
+        "steps": 2,
+        "stop_after": null,
+        "device_batch_size": 1,
+        "total_batch_size": 2048,
+        "sequence_len": 2048,
+        "n_layer": 30,
+        "n_head": 14,
+        "n_embd": 1792,
+        "matrix_lr": 0.02,
+        "scale_lr": 0.01,
+        "scalar_lr": 0.125,
+        "embedding_lr": 0.002,
+        "unembedding_lr": 0.02,
+        "scale_weight_decay": 0.0,
+        "lr_warmup_steps": 2,
+        "final_lr_fraction": 1.0,
+        "loss_target": 20.0,
+        "loss_ema_beta": 0.98,
+        "noise_seed_std": 0.0001,
+        "noise_max_std": 0.5,
+        "noise_growth": 1.02,
+        "noise_interval": 1,
+        "noise_warmup_steps": 0,
+        "loss_tolerance": 0.01,
+        "no_noise": false,
+        "snapshots": 0,
+        "eval_batches": 1,
+        "eval_every": 0,
+        "save_every": 0,
+        "skip_ensemble": false,
+        "resume": null,
+        "eval_only": false,
+        "compile": false,
+        "device": "cuda",
+        "seed": 42
+      },
+      "environment": {
+        "python": "3.10.12",
+        "torch": "2.7.0",
+        "cuda": "12.8",
+        "gpu": "NVIDIA GH200 480GB",
+        "git_commit": "c6f0fa1b415994e0c5cf163990fe253fe1622883",
+        "git_dirty": true,
+        "parameters": 1399476473,
+        "source_sha256": {
+          "train.py": "801ddf05c7b6ddc095c25b4a55f0c446c522357a23daa8700169a5947406140e"
+        }
+      },
+      "contract": {
+        "model_config": {
+          "sequence_len": 2048,
+          "vocab_size": 50257,
+          "n_layer": 30,
+          "n_head": 14,
+          "n_kv_head": 14,
+          "n_embd": 1792,
+          "window_pattern": "SSSL"
+        },
+        "total_steps": 2,
+        "micro_limit": 2,
+        "accumulation": 1,
+        "batch_size": 1,
+        "train_sha256": "0917daa9b287d24ee9e741550b923982d5955931a2622b07b937d23f70432a59",
+        "val_sha256": "bfc69f86f04a27e975ca1c5d715f74353561c1c8ca2f7f92d8b53846e6024d1c",
+        "seed": 42,
+        "controller_config": {
+          "target": 20.0,
+          "beta": 0.98,
+          "seed_std": 0.0001,
+          "max_std": 0.5,
+          "growth": 1.02,
+          "interval": 1,
+          "warmup": 0,
+          "tolerance": 0.01,
+          "enabled": true,
+          "ema_sum": 0.0,
+          "steps": 0,
+          "noise_std": 0.0
+        },
+        "snapshot_steps": [],
+        "optimizer": {
+          "matrix_lr": 0.02,
+          "scale_lr": 0.01,
+          "scalar_lr": 0.125,
+          "embedding_lr": 0.002,
+          "unembedding_lr": 0.02,
+          "scale_weight_decay": 0.0,
+          "lr_warmup_steps": 2,
+          "final_lr_fraction": 1.0
+        }
+      },
+      "data": {
+        "train": {
+          "path": "/home/ubuntu/slowrun/local_data/loss-budget-data-sync/train-eight-sequences.pt",
+          "sha256": "0917daa9b287d24ee9e741550b923982d5955931a2622b07b937d23f70432a59",
+          "rows": 8,
+          "dropped_rows": 0
+        },
+        "val": {
+          "path": "/home/ubuntu/slowrun/local_data/loss-budget-data-sync/val.pt",
+          "sha256": "bfc69f86f04a27e975ca1c5d715f74353561c1c8ca2f7f92d8b53846e6024d1c",
+          "rows": 8,
+          "dropped_rows": 0
+        }
+      }
+    },
+    "result": {
+      "step": 2,
+      "planned_steps": 2,
+      "completed": true,
+      "initial_validation": {
+        "loss": 10.825352902058512,
+        "tokens": 2048,
+        "members": 1,
+        "member_losses": [
+          10.825352902058512
+        ]
+      },
+      "final_validation": {
+        "loss": 10.696931584738195,
+        "tokens": 2048,
+        "members": 1,
+        "member_losses": [
+          10.696931584738195
+        ]
+      },
+      "loss_ema": 10.798273202144726,
+      "noise_std": 0.00010200000000000001,
+      "sphere_error": {
+        "matrix": 1.1920928955078125e-07,
+        "embedding": 1.1920928955078125e-07
+      },
+      "snapshot_count": 0,
+      "session_seconds": 9.065218847244978,
+      "peak_memory_gib": 26.136866092681885
+    },
+    "first_noise_step": 1,
+    "noise_decreases": 0,
+    "median_step_seconds_after_first_two": null,
+    "min_train_loss": 10.77066707611084,
+    "max_train_loss": 10.82644271850586
+  }
+}
